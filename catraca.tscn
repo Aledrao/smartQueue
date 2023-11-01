@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://kf3tbha8asww"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bq7wv"]
+size = Vector3(0.672057, 0.719382, 0.655557)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vrei"]
+albedo_color = Color(1, 0.0784314, 0.0784314, 1)
+metallic = 0.8
+metallic_specular = 0.7
+
+[sub_resource type="BoxMesh" id="BoxMesh_8d7ca"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mvu0f"]
+height = 1.12786
+radius = 0.057248
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ivtue"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yd8s"]
+albedo_color = Color(1, 0.08, 0.08, 1)
+metallic = 0.8
+metallic_specular = 0.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alu4s"]
+size = Vector3(0.111229, 0.143205, 2.2417)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uxj8p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnbc3"]
+albedo_color = Color(1, 0.08, 0.08, 1)
+metallic = 0.77
+metallic_specular = 0.7
+
+[sub_resource type="Animation" id="Animation_hkri7"]
+resource_name = "passar"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("barra")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.4, 1, 0, 0.382683, 0, 0.92388, 0.8, 1, 0, 0.707107, 0, 0.707107)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("borboleta1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.4, 1, 0, 0.382683, 0, 0.92388, 0.8, 1, 0, 0.707107, 0, 0.707107)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("borboleta2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0.707107, 0, 0.707107, 0.4, 1, 0, 0.92388, 0, 0.382683, 0.8, 1, 0, 1, 0, -4.37114e-08)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vlvvt"]
+_data = {
+"passar": SubResource("Animation_hkri7")
+}
+
+[node name="catraca" type="Node3D"]
+
+[node name="base" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="base"]
+shape = SubResource("BoxShape3D_bq7wv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="base"]
+transform = Transform3D(0.669785, 0, 0, 0, 0.721165, 0, 0, 0, 0.654498, 0, 0, 0)
+material_overlay = SubResource("StandardMaterial3D_3vrei")
+mesh = SubResource("BoxMesh_8d7ca")
+
+[node name="barra" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="barra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.882432, 0)
+shape = SubResource("CylinderShape3D_mvu0f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="barra"]
+transform = Transform3D(0.111473, 0, 0, 0, 0.701075, 0, 0, 0, 0.117197, 0, 0.744845, 0)
+mesh = SubResource("CylinderMesh_ivtue")
+surface_material_override/0 = SubResource("StandardMaterial3D_0yd8s")
+
+[node name="borboleta1" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borboleta1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38003, 0)
+shape = SubResource("BoxShape3D_alu4s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="borboleta1"]
+transform = Transform3D(0.111689, 0, 0, 0, 0.139171, 0, 0, 0, 2.22895, 0, 1.37933, 0)
+mesh = SubResource("BoxMesh_uxj8p")
+surface_material_override/0 = SubResource("StandardMaterial3D_dnbc3")
+
+[node name="borboleta2" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="borboleta2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38003, 0)
+shape = SubResource("BoxShape3D_alu4s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="borboleta2"]
+transform = Transform3D(0.111689, 0, 0, 0, 0.139171, 0, 0, 0, 2.22895, 0, 1.37933, 0)
+mesh = SubResource("BoxMesh_uxj8p")
+surface_material_override/0 = SubResource("StandardMaterial3D_dnbc3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vlvvt")
+}
