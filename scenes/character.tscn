@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlita51ie45qy"]
+[gd_scene load_steps=5 format=3 uid="uid://dlita51ie45qy"]
+
+[ext_resource type="Script" path="res://scenes/scripts/character.gd" id="1_mjra3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjap5"]
+albedo_color = Color(0.109804, 0.109804, 0.109804, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_50yh1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pdbuq"]
+radius = 0.32827
+height = 2.23838
 
 [node name="character" type="CharacterBody3D"]
+script = ExtResource("1_mjra3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.65577, 0, 0, 0, 1.11517, 0, 0, 0, 0.642603, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vjap5")
 mesh = SubResource("CapsuleMesh_50yh1")
 skeleton = NodePath("")
 
