@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlita51ie45qy"]
 
-[ext_resource type="Script" path="res://scenes/scripts/character.gd" id="1_mjra3"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_hgo51"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjap5"]
-albedo_color = Color(0.109804, 0.109804, 0.109804, 1)
+albedo_color = Color(0, 0.768627, 0.203922, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_50yh1"]
 
@@ -12,13 +12,16 @@ radius = 0.32827
 height = 2.23838
 
 [node name="character" type="CharacterBody3D"]
-script = ExtResource("1_mjra3")
+script = ExtResource("1_hgo51")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.65577, 0, 0, 0, 1.11517, 0, 0, 0, 0.642603, 0, 0, 0)
+transform = Transform3D(0.694544, 0, 0, 0, 1.12876, 0, 0, 0, 0.730672, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_vjap5")
 mesh = SubResource("CapsuleMesh_50yh1")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_pdbuq")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
