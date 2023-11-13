@@ -5,12 +5,18 @@ extends CharacterBody3D
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var nav_target: Marker3D = $"../NavTarget"
 @onready var nav_target_2: Marker3D = $"../NavTarget2"
+@onready var target: Marker3D = $"../Target"
+@onready var area3dTarget: Area3D = $"../Target/Area3D"
 
 var changeTarget: bool = false
+var targetArea
+
+func _ready() -> void:
+	area3dTarget.body_exited.connect(_on_body_exited)
 
 func _physics_process(delta: float) -> void:
 	if changeTarget == false:
-		navigation_agent.target_position = nav_target.global_transform.origin
+		navigation_agent.target_position = target.global_transform.origin
 	else:
 		navigation_agent.target_position = nav_target_2.global_transform.origin
 
@@ -21,9 +27,6 @@ func _physics_process(delta: float) -> void:
 	velocity = new_velocity
 	move_and_slide()
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_body_exited() -> void:
 	changeTarget = true
-
-
-func _on_target_tree_entered() -> void:
-	print("TESTE")
+	print("ENTROU")
