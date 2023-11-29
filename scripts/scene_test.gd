@@ -9,3 +9,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	character.destination = event.global_transform.origin
 	character.create_path()
+
+func _on_body_entered() -> void:
+	print("ENTROU")
