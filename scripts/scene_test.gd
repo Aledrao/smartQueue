@@ -2,6 +2,11 @@ extends Node3D
 
 @onready var character = $character
 
+func _physics_process(delta: float) -> void:
+	var character = preload("res://scenes/character.tscn").instantiate()
+	character.position = Vector3(0, 0, 0)
+	$spawners.add_child(character, true)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not event is InputEventMouseButton:
 		return
