@@ -22,13 +22,12 @@ func _ready() -> void:
 	navPosition = get_tree().get_root()
 
 func _physics_process(delta: float) -> void:
-	print("CHANGE TARGET: ", changeTarget)
 	if changeTarget == 0:
-		navigation_agent.target_position = nav.global_transform.origin
+		navigation_agent.target_position =Caminhos.sceneTestInicio
 	elif changeTarget == 1:
-		navigation_agent.target_position = nav2.global_transform.origin
+		navigation_agent.target_position = Caminhos.sceneTest1
 	elif changeTarget == 2:
-		navigation_agent.target_position = nav3.global_transform.origin
+		navigation_agent.target_position = Caminhos.sceneTest2
 
 	var current_location = global_transform.origin
 	var next_location = navigation_agent.get_next_path_position()

@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://bua3r6qgu4dph"]
+[gd_scene load_steps=17 format=3 uid="uid://jycah4q0yfi2"]
 
-[ext_resource type="PackedScene" uid="uid://kf3tbha8asww" path="res://scenes/catraca.tscn" id="1_2qhi1"]
-[ext_resource type="Script" path="res://scripts/scene_test.gd" id="1_30ulx"]
-[ext_resource type="PackedScene" uid="uid://dlita51ie45qy" path="res://scenes/character.tscn" id="3_jjl3w"]
+[ext_resource type="Script" path="res://scripts/scene_test.gd" id="1_0okm3"]
+[ext_resource type="PackedScene" uid="uid://kf3tbha8asww" path="res://scenes/catraca.tscn" id="2_gkeol"]
+[ext_resource type="PackedScene" uid="uid://dlita51ie45qy" path="res://scenes/character.tscn" id="3_igbdi"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_pgvso"]
 vertices = PackedVector3Array(-7.46945, 0.432667, -2.3092, -4.66945, 0.432667, -2.3092, -4.56945, 0.432667, -2.5092, -3.76945, 0.432667, -6.7092, -7.46945, 0.432667, -6.7092, -4.56945, 0.432667, -2.5092, -3.76945, 0.432667, -2.5092, -3.76945, 0.432667, -6.7092, -3.76945, 0.432667, -2.5092, -2.26945, 0.432667, -2.5092, -2.26945, 0.432667, -6.7092, -3.76945, 0.432667, -6.7092, -2.36945, 0.432667, 0.5908, -1.96945, 0.432667, 0.6908, -1.86945, 0.432667, -0.00919962, -2.36945, 0.432667, -0.4092, -1.36945, 0.432667, -2.1092, -1.46945, 0.432667, 0.0908003, -1.46945, 0.432667, 0.6908, 7.43055, 0.432667, 0.6908, -2.36945, 0.432667, -0.4092, -1.86945, 0.432667, -0.00919962, -1.46945, 0.432667, 0.0908003, -1.36945, 0.432667, -2.1092, -2.96945, 0.432667, -2.0092, -2.96945, 0.432667, -2.0092, -2.96945, 0.432667, -0.5092, -2.36945, 0.432667, -0.4092, -2.26945, 0.432667, -6.7092, -2.26945, 0.432667, -2.5092, -1.46945, 0.432667, -2.5092, -2.26945, 0.432667, -6.7092, -1.46945, 0.432667, -2.5092, -1.36945, 0.432667, -2.1092, 7.43055, 0.432667, 0.6908, 7.43055, 0.432667, -6.7092, -1.96945, 0.432667, 1.0908, -1.96945, 0.432667, 0.6908, -2.36945, 0.432667, 0.5908, -3.56945, 0.432667, 0.5908, -4.16945, 0.432667, 1.0908, -3.56945, 0.432667, -0.4092, -2.96945, 0.432667, -2.0092, -4.56945, 0.432667, -2.0092, -4.16945, 0.432667, 1.0908, -4.56945, 0.432667, -2.0092, -4.66945, 0.432667, -2.3092, -7.46945, 0.432667, -2.3092, -7.46945, 0.432667, 1.3908, -4.26945, 0.432667, 1.3908, -4.16945, 0.432667, 1.0908, -4.16945, 0.432667, 1.0908, -3.56945, 0.432667, 0.5908, -3.56945, 0.432667, -0.4092, -3.56945, 0.432667, -0.4092, -2.96945, 0.432667, -0.5092, -2.96945, 0.432667, -2.0092, -3.36945, 1.43267, -0.3092, -3.36945, 1.43267, 0.4908, -2.56945, 1.43267, 0.4908, -2.56945, 1.43267, -0.3092, -1.86945, 3.18267, 1.2908, -4.06945, 3.18267, 1.2908, -1.66945, 3.18267, 1.2908, -1.66945, 3.18267, 1.2908, -1.76945, 3.18267, 0.1908, -1.86945, 3.18267, 1.2908, -1.46945, 0.432667, 0.6908, -1.56945, 0.432667, 1.4908, -1.56945, 0.432667, 6.6908, 7.43055, 0.432667, 6.6908, 7.43055, 0.432667, 0.6908, -4.16945, 0.432667, 1.5908, -4.26945, 0.432667, 1.3908, -7.46945, 0.432667, 1.3908, -1.56945, 0.432667, 6.6908, -1.56945, 0.432667, 1.4908, -4.16945, 0.432667, 1.5908, -4.16945, 0.432667, 1.5908, -7.46945, 0.432667, 1.3908, -7.46945, 0.432667, 6.6908, -1.56945, 0.432667, 6.6908)
@@ -51,7 +51,7 @@ albedo_color = Color(1, 1, 1, 0)
 size = Vector3(0.214741, 1.68995, 2.31887)
 
 [node name="sceneTest" type="Node3D"]
-script = ExtResource("1_30ulx")
+script = ExtResource("1_0okm3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0096429, 0.999954, 0, -0.999954, -0.0096429, 0, 38.7396, 0)
@@ -136,7 +136,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavTarget/Area3D"]
-transform = Transform3D(0.531206, 0, -0.847242, 0, 1, 0, 0.847242, 0, 0.531206, 0.597843, 1.38798, 1.34136)
+transform = Transform3D(0.162964, 0, -0.986631, 0, 1, 0, 0.986631, 0, 0.162964, 0.912354, 0.376077, 0.899174)
 shape = SubResource("BoxShape3D_e1ho1")
 
 [node name="NavTarget2" type="Marker3D" parent="."]
@@ -148,7 +148,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavTarget2/Area3D"]
-transform = Transform3D(0.830071, 0, 0.557658, 0, 1, 0, -0.557658, 0, 0.830071, 2.53647, 1.38798, 0.213715)
+transform = Transform3D(0.999127, 0, -0.0417888, 0, 1, 0, 0.0417888, 0, 0.999127, 0.2585, 0.953215, 0.636765)
 shape = SubResource("BoxShape3D_e1ho1")
 
 [node name="NavTarget3" type="Marker3D" parent="."]
@@ -160,15 +160,11 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavTarget3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176353, 1.92488, 1.47635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.359921, 1.22084, 1.47635)
 shape = SubResource("BoxShape3D_e1ho1")
 
-[node name="catraca" parent="." instance=ExtResource("1_2qhi1")]
+[node name="catraca" parent="." instance=ExtResource("2_gkeol")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0.495402, 0.11635)
 
-[node name="personagem" parent="." instance=ExtResource("3_jjl3w")]
+[node name="personagem" parent="." instance=ExtResource("3_igbdi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8759, 1.18568, 5.1741)
-
-[node name="Camera3D3" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9.97889, 0)
-current = true
