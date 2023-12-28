@@ -4,22 +4,11 @@ extends CharacterBody3D
 @export var accel = 10
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
-const SCENE = preload("res://scenes/scene_test.tscn")
-var nav
-var nav2
-var nav3
-
 var navPosition
-
 var changeTarget: int = 0
 var targetArea
 
 func _ready() -> void:
-	var scenePoint = SCENE.instantiate()
-	nav = scenePoint.get_node("NavTarget")
-	nav2 = scenePoint.get_node("NavTarget2")
-	nav3 = scenePoint.get_node("NavTarget3")
-
 	navPosition = get_tree().get_root()
 
 func _physics_process(delta: float) -> void:
