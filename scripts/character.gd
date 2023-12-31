@@ -9,6 +9,7 @@ var changeTarget: int = 0
 var targetArea
 
 func _ready() -> void:
+	changeTarget = 0
 	navPosition = get_tree().get_root()
 
 func _physics_process(delta: float) -> void:
@@ -28,4 +29,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	changeTarget += 1
+
 

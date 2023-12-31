@@ -36,7 +36,6 @@ metallic_specular = 0.7
 [sub_resource type="Animation" id="Animation_hkri7"]
 resource_name = "passar"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "rotation_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -65,7 +64,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tm1rp"]
-size = Vector3(1.89211, 3.06073, 2.03008)
+size = Vector3(0.932671, 3.06073, 0.390307)
 
 [node name="catraca" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -82,6 +81,7 @@ material_overlay = SubResource("StandardMaterial3D_3vrei")
 mesh = SubResource("BoxMesh_8d7ca")
 
 [node name="barra" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="barra"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.882432, 0)
@@ -93,6 +93,7 @@ mesh = SubResource("CylinderMesh_ivtue")
 surface_material_override/0 = SubResource("StandardMaterial3D_0yd8s")
 
 [node name="borboleta1" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borboleta1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38003, 0)
@@ -104,7 +105,7 @@ mesh = SubResource("BoxMesh_uxj8p")
 surface_material_override/0 = SubResource("StandardMaterial3D_dnbc3")
 
 [node name="borboleta2" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="borboleta2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38003, 0)
@@ -127,7 +128,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="vira"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0959358, 0.0228577, 1.24616)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.526854, 0.0228577, 0.67261)
 shape = SubResource("BoxShape3D_tm1rp")
 
 [connection signal="area_entered" from="vira" to="." method="_on_vira_area_entered"]

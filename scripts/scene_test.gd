@@ -11,9 +11,6 @@ func _physics_process(delta: float) -> void:
 	if tempoSorteado == 0:
 		tempoSorteado = randi() % Caminhos.tempoMaximoCenaUmRodadaUm
 
-	print("SAIDA: ", tempoSaida)
-	print("SORTEADO: ", tempoSorteado)
-
 	if tempoSaida > tempoSorteado:
 		spawn_npc(delta)
 		tempoSaida = 0
