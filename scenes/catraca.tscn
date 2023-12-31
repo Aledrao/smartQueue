@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://kf3tbha8asww"]
+[gd_scene load_steps=14 format=3 uid="uid://kf3tbha8asww"]
+
+[ext_resource type="Script" path="res://scripts/catraca.gd" id="1_h8ljb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bq7wv"]
 size = Vector3(0.672057, 0.719382, 0.655557)
@@ -62,8 +64,12 @@ _data = {
 "passar": SubResource("Animation_hkri7")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tm1rp"]
+size = Vector3(1.89211, 3.06073, 2.03008)
+
 [node name="catraca" type="Node3D"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_h8ljb")
 
 [node name="base" type="StaticBody3D" parent="."]
 
@@ -113,3 +119,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dnbc3")
 libraries = {
 "": SubResource("AnimationLibrary_vlvvt")
 }
+speed_scale = 0.6
+
+[node name="vira" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39487, -1.30081)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vira"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0959358, 0.0228577, 1.24616)
+shape = SubResource("BoxShape3D_tm1rp")
+
+[connection signal="area_entered" from="vira" to="." method="_on_vira_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlita51ie45qy"]
+[gd_scene load_steps=8 format=3 uid="uid://dlita51ie45qy"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_ayksl"]
 
@@ -17,6 +17,10 @@ radius = 0.230192
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jgix"]
 size = Vector3(0.49292, 1, 0.494141)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4raj2"]
+height = 1.32276
+radius = 0.375637
 
 [node name="character" type="Node3D"]
 
@@ -44,5 +48,12 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0235596, 0, -0.0537109)
 shape = SubResource("BoxShape3D_7jgix")
+
+[node name="catraca" type="Area3D" parent="Node3D"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/catraca"]
+shape = SubResource("CylinderShape3D_4raj2")
 
 [connection signal="area_entered" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_area_entered"]

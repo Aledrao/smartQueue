@@ -8,11 +8,14 @@ var tempoSorteado = 0
 func _physics_process(delta: float) -> void:
 	tempoSaida += delta
 
-	if tempoSaida < tempoSorteado:
-		tempoSorteado = randi() % 16
+	if tempoSorteado == 0:
+		tempoSorteado = randi() % Caminhos.tempoMaximoCenaUmRodadaUm
+
+	print("SAIDA: ", tempoSaida)
+	print("SORTEADO: ", tempoSorteado)
+
+	if tempoSaida > tempoSorteado:
 		spawn_npc(delta)
-		print("SAIDA: ", tempoSaida)
-		print("SORTEADO: ", tempoSorteado)
 		tempoSaida = 0
 		tempoSorteado = 0
 
