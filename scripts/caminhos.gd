@@ -1,5 +1,10 @@
 extends Node
 
+var catracaUmUsando: bool
+var catracaDoisUsando: bool
+var catracaTresUsando: bool
+var catracaQuatroUsando: bool
+
 #CENA1
 var tempoMaximoCenaUmRodadaUm: int = 10
 
