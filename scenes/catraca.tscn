@@ -142,5 +142,5 @@ shape = SubResource("BoxShape3D_tm1rp")
 
 [connection signal="area_entered" from="passagemFora" to="." method="_on_vira_area_entered"]
 [connection signal="area_exited" from="passagemFora" to="." method="_on_passagem_fora_area_exited"]
-[connection signal="area_exited" from="passagemDentro" to="." method="_on_passagem_dentro_area_exited"]
 [connection signal="area_exited" from="passagemDentro" to="." method="_on_passagem_fora_area_exited"]
+[connection signal="area_exited" from="passagemDentro" to="." method="_on_passagem_dentro_area_exited"]

@@ -7,6 +7,7 @@ extends CharacterBody3D
 var navPosition
 var changeTarget: int = 0
 var targetArea
+@onready var filaEnterUm = get_node("/root/catraca/filaEntrada1")
 
 func _ready() -> void:
 	changeTarget = 0
@@ -16,7 +17,10 @@ func _physics_process(delta: float) -> void:
 	if changeTarget == 0:
 		navigation_agent.target_position = Caminhos.sceneTestInicio
 	elif changeTarget == 1:
-		navigation_agent.target_position = Caminhos.sceneTest1
+		if Caminhos.catracaUmUsando == true:
+			navigation_agent.target_position = Caminhos.filaEntrada1
+		else:
+			navigation_agent.target_position = Caminhos.sceneTest1
 	elif changeTarget == 2:
 		navigation_agent.target_position = Caminhos.sceneTest2
 
