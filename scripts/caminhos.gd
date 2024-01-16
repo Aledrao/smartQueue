@@ -16,7 +16,7 @@ var arrayCaminhosEntradaTelaTest = [Vector3(5.876, 1.186, 1.154), Vector3(-1.432
 
 # Filas
 var arrayocupaPosicoesFilaEntrada: Array[bool] = [false, false, false, false, false, false, false, false, false, false]
-
+var arrayPosicaoFilaEntradaTelaTeste = [Vector3(-1.628, 1.186, -1.548), Vector3(0.162, 1.186, -0.123), Vector3(0.162, 1.186, -0.123)]
 var posicaoFilaEntrada1: Vector3 = Vector3(-1.628, 1.186, -1.548)
 var posicaoFilaEntrada2: Vector3 = Vector3(-1.628, 1.186, -1.548)
 var posicaoFilaEntrada3: Vector3 = Vector3(-1.628, 1.186, -1.548)

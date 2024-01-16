@@ -51,6 +51,6 @@ func verificarProximaPosicaoFila() -> void:
 	if posicaoAtualFila == 1:
 		Caminhos.ativarFilaEntrada = false
 	else:
-		if Caminhos.ocupaFilaEntrada1:
+		if Caminhos.arrayocupaPosicoesFilaEntrada[posicaoAtualFila - 1] == false:
 			pass
 
