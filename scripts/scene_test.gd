@@ -26,3 +26,15 @@ func sorteiaLadoNpc() -> String:
 	var numeroNpc = RandomNumberGenerator.new()
 	numeroNpc.randomize()
 	return str("npc", numeroNpc.randi_range(1, 2))
+
+func _on_posicao_1_body_entered(body: Node3D) -> void:
+	Caminhos.ocupaFilaEntrada1 = true
+
+func _on_posicao_1_body_exited(body: Node3D) -> void:
+	Caminhos.ocupaFilaEntrada1 = false
+
+func _on_posicao_2_body_entered(body: Node3D) -> void:
+	Caminhos.ocupaFilaEntrada2 = true
+
+func _on_posicao_2_body_exited(body: Node3D) -> void:
+	Caminhos.ocupaFilaEntrada2 = false
