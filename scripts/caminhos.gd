@@ -1,9 +1,7 @@
 extends Node
 
-var catracaUmUsando: bool
-var catracaDoisUsando: bool
-var catracaTresUsando: bool
-var catracaQuatroUsando: bool
+var arrayCatracasFuncionais: Array[bool] = [false, false, false, false, false, false]
+var arrayPassandoCatracas: Array[bool] = [false, false, false, false, false, false]
 
 # ATIVAR FILA
 var ativarFilaEntrada: bool = false
@@ -16,9 +14,6 @@ var arrayCaminhosEntradaTelaTest = [Vector3(5.876, 1.186, 1.154), Vector3(-1.432
 
 # Filas
 var arrayocupaPosicoesFilaEntrada: Array[bool] = [false, false, false, false, false, false, false, false, false, false]
-var arrayPosicaoFilaEntradaTelaTeste = [Vector3(-1.628, 1.186, -1.548), Vector3(0.162, 1.186, -0.123), Vector3(0.162, 1.186, -0.123)]
-var posicaoFilaEntrada1: Vector3 = Vector3(-1.628, 1.186, -1.548)
-var posicaoFilaEntrada2: Vector3 = Vector3(-1.628, 1.186, -1.548)
-var posicaoFilaEntrada3: Vector3 = Vector3(-1.628, 1.186, -1.548)
-var posicaoFilaEntrada4: Vector3 = Vector3(-1.628, 1.186, -1.548)
-var posicaoFilaEntrada5: Vector3 = Vector3(-1.628, 1.186, -1.548)
+var arrayPosicaoFilaEntradaTelaTeste = [Vector3(-0.783, 0.425, -1.628), Vector3(-0.325, 0.425, -1.628), Vector3(0.098, 0.425, -1.628),
+	Vector3(0.485, 0.425, -1.628), Vector3(0.945, 0.425, -1.628), Vector3(1.395, 0.425, -1.628), Vector3(1.816, 0.425, -1.628),
+	Vector3(2.214, 0.425, -1.628), Vector3(2.635, 0.425, -1.628), Vector3(3.092, 0.425, -1.628)]

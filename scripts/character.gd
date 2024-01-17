@@ -13,13 +13,14 @@ var posicaoAtualFila: int = 0
 func _ready() -> void:
 	changeTarget = 0
 	navPosition = get_tree().get_root()
+	Caminhos.arrayCatracasFuncionais[0] = true
 
 func _physics_process(delta: float) -> void:
 	if !Caminhos.ativarFilaEntrada:
 		if changeTarget == 0:
 			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[0]
 		elif changeTarget == 1:
-			if Caminhos.catracaUmUsando == true:
+			if Caminhos.arrayCatracasFuncionais[0] == true:
 				navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[1]
 			else:
 				navigation_agent.target_position = Caminhos.sceneTest1
