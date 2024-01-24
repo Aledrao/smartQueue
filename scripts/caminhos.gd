@@ -10,7 +10,7 @@ var ativarFilaEntrada: bool = false
 var tempoMaximoCenaUmRodadaUm: int = 10
 
 # Pontos da cena de testes
-var arrayCaminhosEntradaTelaTest = [Vector3(5.876, 1.186, 1.154), Vector3(-1.432, 1.186, -1.005), Vector3(-5.965, 1.186, -1.076)]
+var arrayCaminhosEntradaTelaTest = [Vector3(5.876, 1.186, 1.154), Vector3(-2.419, 0.395, -0.564), Vector3(-5.965, 1.186, -1.076)]
 
 # Filas
 var arrayocupaPosicoesFilaEntrada: Array[bool] = [false, false, false, false, false, false, false, false, false, false]

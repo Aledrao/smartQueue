@@ -60,8 +60,10 @@ transform = Transform3D(-0.106108, 0.441939, -0.890748, -4.03353e-09, 0.895805, 
 
 [node name="Camera3D3" type="Camera3D" parent="."]
 transform = Transform3D(0.99988, -0.00372644, -0.0150526, 0.0149813, -0.0184726, 0.999717, -0.00400345, -0.999822, -0.0184146, -1.7683, 9.01469, -0.229219)
+current = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_pgvso")
 
 [node name="floor" type="StaticBody3D" parent="NavigationRegion3D"]
@@ -126,15 +128,15 @@ transform = Transform3D(0.162964, 0, -0.986631, 0, 1, 0, 0.986631, 0, 0.162964, 
 shape = SubResource("BoxShape3D_e1ho1")
 
 [node name="NavTarget2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.62792, 0.394783, -1.54775)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64334, 0.394783, -0.563955)
 
 [node name="Area3D" type="Area3D" parent="NavTarget2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224267, 0, 0.0958226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224267, 0, -0.350194)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavTarget2/Area3D"]
-transform = Transform3D(0.999127, 0, -0.0417888, 0, 1, 0, 0.0417888, 0, 0.999127, 0.25939, 0.953215, 0.615485)
+transform = Transform3D(0.999127, 0, -0.0417888, 0, 1, 0, 0.0417888, 0, 0.999127, 0.278603, 0.953215, 0.15612)
 shape = SubResource("BoxShape3D_e1ho1")
 
 [node name="NavTarget3" type="Marker3D" parent="."]
