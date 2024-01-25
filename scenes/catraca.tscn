@@ -123,7 +123,7 @@ libraries = {
 speed_scale = 0.6
 
 [node name="passagemFora" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15075, 1.39487, -1.12691)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09965, 1.39487, -1.12691)
 collision_layer = 4
 collision_mask = 4
 
@@ -137,10 +137,10 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="passagemDentro"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0990861, 0.0228577, 0.413879)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.122188, 0.0228577, 0.413879)
 shape = SubResource("BoxShape3D_tm1rp")
 
 [connection signal="area_entered" from="passagemFora" to="." method="_on_vira_area_entered"]
 [connection signal="area_exited" from="passagemFora" to="." method="_on_passagem_fora_area_exited"]
-[connection signal="area_exited" from="passagemDentro" to="." method="_on_passagem_fora_area_exited"]
 [connection signal="area_exited" from="passagemDentro" to="." method="_on_passagem_dentro_area_exited"]
+[connection signal="area_exited" from="passagemDentro" to="." method="_on_passagem_fora_area_exited"]

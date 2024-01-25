@@ -15,24 +15,22 @@ func _ready() -> void:
 	Caminhos.arrayCatracasFuncionais[0] = true
 
 func _physics_process(delta: float) -> void:
-	print("FILA ATIVADA: ", (Caminhos.ativarFilaEntrada == false))
-	print("PASSO: ", changeTarget, " ", changeTarget > 1)
-	print("RESULTADO: ", (Caminhos.ativarFilaEntrada == false) and (changeTarget > 1))
-	if (Caminhos.ativarFilaEntrada == false) or (changeTarget > 1):
+	print("FILA ATIVADA: ", (Caminhos.ativarFilaEntrada == true))
+	print("PASSO: ", changeTarget, " ", changeTarget == 1)
+	print("RESULTADO: ", (Caminhos.ativarFilaEntrada == true) and (changeTarget == 1))
+	if (Caminhos.ativarFilaEntrada == true) and (changeTarget == 1):
+		print("VAI FILA")
+		navigation_agent.target_position = acessarFila()
+		verificarProximaPosicaoFila()
+
+	else:
 		print("VAI CATRACA")
 		if changeTarget == 0:
 			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[0]
 		elif changeTarget == 1:
-			if Caminhos.arrayCatracasFuncionais[0] == true:
-				navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[1]
-			else:
-				navigation_agent.target_position = Caminhos.sceneTest1
+			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[1]
 		elif changeTarget == 2:
 			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[2]
-	else:
-		print("VAI FILA")
-		navigation_agent.target_position = acessarFila()
-		verificarProximaPosicaoFila()
 
 	var current_location = global_transform.origin
 	var next_location = navigation_agent.get_next_path_position()

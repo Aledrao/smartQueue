@@ -128,7 +128,7 @@ transform = Transform3D(0.162964, 0, -0.986631, 0, 1, 0, 0.986631, 0, 0.162964, 
 shape = SubResource("BoxShape3D_e1ho1")
 
 [node name="NavTarget2" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64334, 0.394783, -0.563955)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03665, 0.394783, -0.563955)
 
 [node name="Area3D" type="Area3D" parent="NavTarget2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224267, 0, -0.350194)
