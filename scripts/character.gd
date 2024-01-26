@@ -15,22 +15,12 @@ func _ready() -> void:
 	Caminhos.arrayCatracasFuncionais[0] = true
 
 func _physics_process(delta: float) -> void:
-	print("FILA ATIVADA: ", (Caminhos.ativarFilaEntrada == true))
-	print("PASSO: ", changeTarget, " ", changeTarget == 1)
-	print("RESULTADO: ", (Caminhos.ativarFilaEntrada == true) and (changeTarget == 1))
 	if (Caminhos.ativarFilaEntrada == true) and (changeTarget == 1):
-		print("VAI FILA")
 		navigation_agent.target_position = acessarFila()
 		verificarProximaPosicaoFila()
 
 	else:
-		print("VAI CATRACA")
-		if changeTarget == 0:
-			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[0]
-		elif changeTarget == 1:
-			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[1]
-		elif changeTarget == 2:
-			navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[2]
+		navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 
 	var current_location = global_transform.origin
 	var next_location = navigation_agent.get_next_path_position()
@@ -40,15 +30,25 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	changeTarget += 1
+	if (changeTarget <= 1):
+		changeTarget += 1
 
 func acessarFila() -> Vector3:
-	for i in 11:
-		if !Caminhos.arrayocupaPosicoesFilaEntrada[i]:
-			posicaoAtualFila = i
-			return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
-		pass
-	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[9]
+	print("FILAS ATIVADAS: ", Caminhos.ativarFilaEntrada)
+	print("POSICOES OCUPADAS: ", Caminhos.arrayocupaPosicoesFilaEntrada.has(false))
+	print("DECISAO: ", Caminhos.ativarFilaEntrada == true and Caminhos.arrayocupaPosicoesFilaEntrada.has(false))
+	if(Caminhos.ativarFilaEntrada == true and Caminhos.arrayocupaPosicoesFilaEntrada.has(false)):
+		print("VOLTA CATRACA")
+		Caminhos.ativarFilaEntrada = false
+		return Caminhos.arrayPosicaoFilaEntradaTelaTeste[9]
+	else:
+		print("VOLTA FILA")
+		for i in 11:
+			if !Caminhos.arrayocupaPosicoesFilaEntrada[i]:
+				posicaoAtualFila = i
+				return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
+
+		return Caminhos.arrayPosicaoFilaEntradaTelaTeste[9]
 
 func verificarProximaPosicaoFila() -> void:
 	if posicaoAtualFila == 1:

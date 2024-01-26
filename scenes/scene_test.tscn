@@ -63,7 +63,6 @@ transform = Transform3D(0.99988, -0.00372644, -0.0150526, 0.0149813, -0.0184726,
 current = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-visible = false
 navigation_mesh = SubResource("NavigationMesh_pgvso")
 
 [node name="floor" type="StaticBody3D" parent="NavigationRegion3D"]
