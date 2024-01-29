@@ -15,7 +15,7 @@ func _ready() -> void:
 	Caminhos.arrayCatracasFuncionais[0] = true
 
 func _physics_process(delta: float) -> void:
-	if (Caminhos.ativarFilaEntrada == true) and (changeTarget == 1):
+	if (Caminhos.passandoCatraca == true) and (changeTarget == 1):
 		navigation_agent.target_position = acessarFila()
 		verificarProximaPosicaoFila()
 
@@ -34,12 +34,9 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		changeTarget += 1
 
 func acessarFila() -> Vector3:
-	print("FILAS ATIVADAS: ", Caminhos.ativarFilaEntrada)
-	print("POSICOES OCUPADAS: ", Caminhos.arrayocupaPosicoesFilaEntrada.has(false))
-	print("DECISAO: ", Caminhos.ativarFilaEntrada == true and Caminhos.arrayocupaPosicoesFilaEntrada.has(false))
-	if(Caminhos.ativarFilaEntrada == true and Caminhos.arrayocupaPosicoesFilaEntrada.has(false)):
+	if(Caminhos.passandoCatraca == true and Caminhos.arrayocupaPosicoesFilaEntrada.has(false)):
 		print("VOLTA CATRACA")
-		Caminhos.ativarFilaEntrada = false
+		Caminhos.passandoCatraca = false
 		return Caminhos.arrayPosicaoFilaEntradaTelaTeste[9]
 	else:
 		print("VOLTA FILA")
@@ -52,7 +49,7 @@ func acessarFila() -> Vector3:
 
 func verificarProximaPosicaoFila() -> void:
 	if posicaoAtualFila == 1:
-		Caminhos.ativarFilaEntrada = false
+		Caminhos.passandoCatraca = false
 	else:
 		if Caminhos.arrayocupaPosicoesFilaEntrada[posicaoAtualFila - 1] == false:
 			posicaoAtualFila -= 1

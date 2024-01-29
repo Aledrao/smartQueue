@@ -3,7 +3,8 @@ extends Node
 var arrayCatracasFuncionais: Array[bool] = [false, false, false, false, false, false]
 var arrayPassandoCatracas: Array[bool] = [false, false, false, false, false, false]
 
-# ATIVAR FILA
+# PASSANDO NA CATRACA E CRIANDO FILA
+var passandoCatraca: bool = false
 var ativarFilaEntrada: bool = false
 
 ###################CENA_TESTE############################
