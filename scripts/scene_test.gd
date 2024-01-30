@@ -29,6 +29,7 @@ func sorteiaLadoNpc() -> String:
 
 func _on_posicao_1_body_entered(body: Node3D) -> void:
 	Caminhos.arrayocupaPosicoesFilaEntrada[0] = true
+	Caminhos.ativarFilaEntrada = true
 
 func _on_posicao_1_body_exited(body: Node3D) -> void:
 	Caminhos.arrayocupaPosicoesFilaEntrada[0] = false
