@@ -33,14 +33,16 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		changeTarget += 1
 
 func acessarFila() -> Vector3:
-	for i in 11:
-		if Caminhos.arrayocupaPosicoesFilaEntrada[i] == false and posicaoAtualFila == 0:
-			posicaoAtualFila = i + 1
-			print("POSIÇÃO NA FILA: ", posicaoAtualFila)
-			Caminhos.arrayocupaPosicoesFilaEntrada[i] == true
+	print("POSIÇÃO NA FILA: ", posicaoAtualFila)
+	print("PRIMEIRO LUGAR: ", Caminhos.arrayOcupaPosicoesFilaEntrada[0])
+	if posicaoAtualFila == 0:
+		for i in 11:
+			if(Caminhos.arrayOcupaPosicoesFilaEntrada[i] == false):
+				posicaoAtualFila = i + 1
+				Caminhos.arrayOcupaPosicoesFilaEntrada[i] == true
 			return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
-		else:
-			return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila - 1]
+	else:
+		return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila - 1]
 
 	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[9]
 
@@ -48,6 +50,6 @@ func verificarProximaPosicaoFila() -> void:
 	if posicaoAtualFila == 1:
 		Caminhos.passandoCatraca = false
 	else:
-		if Caminhos.arrayocupaPosicoesFilaEntrada[posicaoAtualFila - 1] == false:
+		if Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 1] == false:
 			posicaoAtualFila -= 1
 
