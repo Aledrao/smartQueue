@@ -13,12 +13,14 @@ func _ready() -> void:
 	changeTarget = 0
 	navPosition = get_tree().get_root()
 	Caminhos.arrayCatracasFuncionais[0] = true
+	posicaoAtualFila = 0
 
 func _physics_process(delta: float) -> void:
-	if ((Caminhos.passandoCatraca == true) and (changeTarget == 1)) or posicaoAtualFila == 0:
+	if ((Caminhos.passandoCatraca == true) and (changeTarget == 1)):
 		navigation_agent.target_position = acessarFila()
 		#verificarProximaPosicaoFila()
 	else:
+		posicaoAtualFila = 0
 		navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 
 	var current_location = global_transform.origin
@@ -33,18 +35,18 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		changeTarget += 1
 
 func acessarFila() -> Vector3:
-	print("POSIÇÃO NA FILA: ", posicaoAtualFila)
-	print("PRIMEIRO LUGAR: ", Caminhos.arrayOcupaPosicoesFilaEntrada[0])
+	print("POSICAO: ", posicaoAtualFila == 0)
+	print("CAMINHOS: ", Caminhos.ativarFilaEntrada)
+	print("RESPOSTAS: ", posicaoAtualFila == 0 and Caminhos.ativarFilaEntrada == false)
 	if posicaoAtualFila == 0:
 		for i in 11:
+			print("CONTADOR: ", i)
 			if(Caminhos.arrayOcupaPosicoesFilaEntrada[i] == false):
 				posicaoAtualFila = i + 1
-				Caminhos.arrayOcupaPosicoesFilaEntrada[i] == true
-			return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
-	else:
-		return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila - 1]
-
-	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[9]
+				Caminhos.arrayOcupaPosicoesFilaEntrada[i] = true
+				print("LOCAL: ", Caminhos.arrayOcupaPosicoesFilaEntrada[i])
+				return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
+	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila - 1]
 
 func verificarProximaPosicaoFila() -> void:
 	if posicaoAtualFila == 1:
