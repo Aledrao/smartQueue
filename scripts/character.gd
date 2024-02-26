@@ -16,10 +16,16 @@ func _ready() -> void:
 	posicaoAtualFila = 0
 
 func _physics_process(delta: float) -> void:
-	if ((Caminhos.passandoCatraca == true) and (changeTarget == 1)):
+	if (Caminhos.ativarFilaEntrada and changeTarget == 1):
 		navigation_agent.target_position = acessarFila()
-		#verificarProximaPosicaoFila()
+		if(!Caminhos.passandoCatraca and changeTarget == 1):
+			navigation_agent.target_position = sairFila()
+		if !Caminhos.arrayOcupaPosicoesFilaEntrada.has(true):
+			Caminhos.ativarFilaEntrada = false
 	else:
+		if Caminhos.passandoCatraca:
+			Caminhos.ativarFilaEntrada = true
+
 		posicaoAtualFila = 0
 		navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 
@@ -35,23 +41,32 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		changeTarget += 1
 
 func acessarFila() -> Vector3:
-	print("POSICAO: ", posicaoAtualFila == 0)
-	print("CAMINHOS: ", Caminhos.ativarFilaEntrada)
-	print("RESPOSTAS: ", posicaoAtualFila == 0 and Caminhos.ativarFilaEntrada == false)
 	if posicaoAtualFila == 0:
 		for i in 11:
-			print("CONTADOR: ", i)
 			if(Caminhos.arrayOcupaPosicoesFilaEntrada[i] == false):
 				posicaoAtualFila = i + 1
 				Caminhos.arrayOcupaPosicoesFilaEntrada[i] = true
-				print("LOCAL: ", Caminhos.arrayOcupaPosicoesFilaEntrada[i])
 				return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
+	elif posicaoAtualFila == 1:
+		if Caminhos.arrayOcupaPosicoesFilaEntrada[1] == false:
+			posicaoAtualFila = 0
+			Caminhos.ativarFilaEntrada = false
+			return Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila - 1]
 
-func verificarProximaPosicaoFila() -> void:
+func sairFila() -> Vector3:
+	print("SAIR FILA")
 	if posicaoAtualFila == 1:
-		Caminhos.passandoCatraca = false
-	else:
-		if Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 1] == false:
+		print("PRIMEIRA POSICAO")
+		posicaoAtualFila = 0
+		Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila] = false
+		return Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
+	elif posicaoAtualFila > 1:
+		print("ALÉM DA PRIMEIRA POSICAO")
+		if Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 2] == false:
+			print("IR PARA FRENTE")
+			Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 2] = true
 			posicaoAtualFila -= 1
+			return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila]
+	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila]
 

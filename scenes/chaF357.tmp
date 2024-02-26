@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlita51ie45qy"]
+
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_ayksl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjap5"]
+albedo_color = Color(0, 0.768627, 0.203922, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_50yh1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pdbuq"]
+radius = 0.32827
+height = 2.23838
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_167h3"]
+height = 1.75867
+radius = 0.230192
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jgix"]
+size = Vector3(0.49292, 1, 0.494141)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4raj2"]
+height = 1.32276
+radius = 0.375637
+
+[node name="character" type="Node3D"]
+
+[node name="Node3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_ayksl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.694544, 0, 0, 0, 1.12876, 0, 0, 0, 0.730672, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vjap5")
+mesh = SubResource("CapsuleMesh_50yh1")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D"]
+shape = SubResource("CapsuleShape3D_pdbuq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Node3D"]
+shape = SubResource("CylinderShape3D_167h3")
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0235596, 0, -0.0537109)
+shape = SubResource("BoxShape3D_7jgix")
+
+[node name="catraca" type="Area3D" parent="Node3D"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/catraca"]
+shape = SubResource("CylinderShape3D_4raj2")
+
+[connection signal="area_entered" from="Node3D/Area3D" to="Node3D" method="_on_area_3d_area_entered"]
