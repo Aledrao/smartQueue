@@ -57,12 +57,14 @@ func acessarFila() -> Vector3:
 func sairFila() -> Vector3:
 	print("SAIR FILA")
 	if posicaoAtualFila == 1:
-		print("PRIMEIRA POSICAO")
+		print("++PRIMEIRA POSICAO++")
+		print("POSICAO FILA: ", posicaoAtualFila)
+		print("ARRAY: ", Caminhos.arrayOcupaPosicoesFilaEntrada)
 		posicaoAtualFila = 0
 		Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila] = false
 		return Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 	elif posicaoAtualFila > 1:
-		print("ALÉM DA PRIMEIRA POSICAO")
+		print("ALÉM DA PRIMEIRA POSICAO")		
 		if Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 2] == false:
 			print("IR PARA FRENTE")
 			Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 2] = true
