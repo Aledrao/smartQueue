@@ -44,30 +44,25 @@ func acessarFila() -> Vector3:
 	if posicaoAtualFila == 0:
 		for i in 11:
 			if(Caminhos.arrayOcupaPosicoesFilaEntrada[i] == false):
-				posicaoAtualFila = i + 1
 				Caminhos.arrayOcupaPosicoesFilaEntrada[i] = true
+				posicaoAtualFila = i + 1
 				return Caminhos.arrayPosicaoFilaEntradaTelaTeste[i]
-	elif posicaoAtualFila == 1:
-		if Caminhos.arrayOcupaPosicoesFilaEntrada[1] == false:
-			posicaoAtualFila = 0
-			Caminhos.ativarFilaEntrada = false
-			return Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila - 1]
 
 func sairFila() -> Vector3:
 	print("SAIR FILA")
+	print("POSICAO FILA: ", posicaoAtualFila)
 	if posicaoAtualFila == 1:
 		print("++PRIMEIRA POSICAO++")
-		print("POSICAO FILA: ", posicaoAtualFila)
 		print("ARRAY: ", Caminhos.arrayOcupaPosicoesFilaEntrada)
 		posicaoAtualFila = 0
 		Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila] = false
 		return Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
-	elif posicaoAtualFila > 1:
-		print("ALÉM DA PRIMEIRA POSICAO")		
-		if Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 2] == false:
+	elif posicaoAtualFila >= 1:
+		print("ALÉM DA PRIMEIRA POSICAO")
+		if Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 1] == false:
 			print("IR PARA FRENTE")
-			Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 2] = true
+			Caminhos.arrayOcupaPosicoesFilaEntrada[posicaoAtualFila - 1] = true
 			posicaoAtualFila -= 1
 			return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila]
 	return Caminhos.arrayPosicaoFilaEntradaTelaTeste[posicaoAtualFila]
