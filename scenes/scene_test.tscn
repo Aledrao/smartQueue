@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://jycah4q0yfi2"]
+[gd_scene load_steps=14 format=3 uid="uid://jycah4q0yfi2"]
 
 [ext_resource type="Script" path="res://scripts/scene_test.gd" id="1_0okm3"]
 [ext_resource type="PackedScene" uid="uid://kf3tbha8asww" path="res://scenes/catraca.tscn" id="2_gkeol"]
@@ -40,9 +40,6 @@ size = Vector3(1.26106, 2.7332, 0.161211)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e1ho1"]
 size = Vector3(0.214741, 1.68995, 1.33338)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dxvnq"]
-size = Vector3(0.326477, 1.81702, 0.439575)
 
 [node name="sceneTest" type="Node3D"]
 script = ExtResource("1_0okm3")
@@ -162,96 +159,3 @@ visible = false
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45275, 1.18904, -5.30924)
 visible = false
-
-[node name="filaEntrada" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.949398, 1.38402, -1.52271)
-
-[node name="posicao1" type="Area3D" parent="filaEntrada"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao2" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.443459, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao3" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.872885, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao4" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28002, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao5" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72348, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao6" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15291, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao7" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5875, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao8" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.99464, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao9" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4381, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[node name="posicao10" type="Area3D" parent="filaEntrada"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86752, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="filaEntrada/posicao10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.161774, -0.227234, -0.122986)
-shape = SubResource("BoxShape3D_dxvnq")
-
-[connection signal="body_entered" from="filaEntrada/posicao1" to="." method="_on_posicao_1_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao1" to="." method="_on_posicao_1_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao2" to="." method="_on_posicao_2_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao2" to="." method="_on_posicao_2_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao3" to="." method="_on_posicao_3_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao3" to="." method="_on_posicao_3_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao4" to="." method="_on_posicao_4_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao4" to="." method="_on_posicao_4_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao5" to="." method="_on_posicao_5_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao5" to="." method="_on_posicao_5_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao6" to="." method="_on_posicao_6_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao6" to="." method="_on_posicao_6_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao7" to="." method="_on_posicao_7_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao7" to="." method="_on_posicao_7_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao8" to="." method="_on_posicao_8_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao8" to="." method="_on_posicao_8_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao9" to="." method="_on_posicao_9_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao9" to="." method="_on_posicao_9_body_exited"]
-[connection signal="body_entered" from="filaEntrada/posicao10" to="." method="_on_posicao_10_body_entered"]
-[connection signal="body_exited" from="filaEntrada/posicao10" to="." method="_on_posicao_10_body_exited"]
