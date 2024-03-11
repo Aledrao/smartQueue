@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if Caminhos.passandoCatraca:
 			Caminhos.ativarFilaEntrada = true
-		
+
 		navigation_agent.target_position = Caminhos.arrayCaminhosEntradaTelaTest[changeTarget]
 
 	var current_location = global_transform.origin
