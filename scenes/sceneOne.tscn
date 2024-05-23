@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cknqowsia0yox"]
+
+[ext_resource type="PackedScene" uid="uid://cwkvtrnbn5thb" path="res://assets/sceneOne.blend" id="1_xqgoo"]
+[ext_resource type="PackedScene" uid="uid://ct67jyxajv3nu" path="res://scenes/mainCharacter.tscn" id="2_u0qm2"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="sceneOne" parent="." instance=ExtResource("1_xqgoo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328241, 0, -0.407668)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="sceneOne"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04673, 4.31158, -8.81474)
+light_energy = 0.833
+light_indirect_energy = 1.5
+light_volumetric_fog_energy = 1.333
+light_size = 0.031
+light_specular = 2.167
+shadow_enabled = true
+shadow_normal_bias = 2.041
+shadow_transmittance_bias = 5.716
+shadow_blur = 0.896
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="sceneOne"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0773, 4.31158, -8.81474)
+light_energy = 0.833
+light_indirect_energy = 1.5
+light_volumetric_fog_energy = 1.333
+light_size = 0.031
+light_specular = 2.167
+shadow_enabled = true
+shadow_normal_bias = 2.041
+shadow_transmittance_bias = 5.716
+shadow_blur = 0.896
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="sceneOne"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.87216, 4.31158, -8.81474)
+light_energy = 0.833
+light_indirect_energy = 1.5
+light_volumetric_fog_energy = 1.333
+light_size = 0.031
+light_specular = 2.167
+shadow_enabled = true
+shadow_normal_bias = 2.041
+shadow_transmittance_bias = 5.716
+shadow_blur = 0.896
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="sceneOne"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80175, 4.31158, -8.81474)
+light_energy = 0.833
+light_indirect_energy = 1.5
+light_volumetric_fog_energy = 1.333
+light_size = 0.031
+light_specular = 2.167
+shadow_enabled = true
+shadow_normal_bias = 2.041
+shadow_transmittance_bias = 5.716
+shadow_blur = 0.896
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 47.1757, 0)
+
+[node name="mainCharacter" parent="." instance=ExtResource("2_u0qm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.138, -4.65106)
+
+[node name="Camera3D2" type="Camera3D" parent="mainCharacter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.609747, 0.112775)
