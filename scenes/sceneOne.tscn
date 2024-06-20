@@ -62,5 +62,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 47.
 [node name="mainCharacter" parent="." instance=ExtResource("2_u0qm2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.138, -4.65106)
 
-[node name="Camera3D2" type="Camera3D" parent="mainCharacter"]
+[node name="Neck" type="Node3D" parent="mainCharacter"]
+
+[node name="Camera3D2" type="Camera3D" parent="mainCharacter/Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.609747, 0.112775)
